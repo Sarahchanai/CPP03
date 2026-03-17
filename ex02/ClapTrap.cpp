@@ -7,7 +7,7 @@
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap's default constructor called" << std::endl;
     _name = "";
     _hitPoints = 10; // vies de départ du robot
     _energyPoints = 10;
@@ -29,9 +29,20 @@ ClapTrap::ClapTrap (const	ClapTrap& original)
 //: _name(original._name), _hitPoints(original._hitPoints), _energyPoints(original._energyPoints), _attackDamage(original._attackDamage)
 {
     std::cout << "Copy constructor called" << std::endl;
-    // ou tout initialisé ici 
+    // ou tout initialisé ici
+
     *this = original;
 }
+
+// ClapTrap::ClapTrap(const ClapTrap& original)
+// : _name(original._name),
+//   _hitPoints(original._hitPoints),
+//   _energyPoints(original._energyPoints),
+//   _attackDamage(original._attackDamage)
+// {
+// 	std::cout << "Copy constructor called" << std::endl;
+// }
+
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 {

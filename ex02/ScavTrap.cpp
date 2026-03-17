@@ -1,0 +1,58 @@
+#include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	_hitPoints = 100;  // écrase les valeurs de ClapTrap
+	_energyPoints = 50;
+	_attackDamage = 20;
+
+	std::cout << "ScavTrap default constructor called" << std::endl;
+}
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
+{
+	_hitPoints    = 100; // écrase les 10 de ClapTrap
+	_energyPoints = 50; // écrase les 10 de ClapTrap
+	_attackDamage = 20; // écrase les 0 de ClapTrap
+
+	std::cout << "ScavTrap " << _name << " constructor called" << std::endl;
+}
+
+ScavTrap::ScavTrap(const ScavTrap& original) : ClapTrap(original)
+{
+	std::cout << "ScavTrap " << _name << " copy constructor called" << std::endl;
+}
+
+ScavTrap::~ScavTrap()
+{
+	 std::cout << "ScavTrap " << _name << " destructor called" << std::endl;
+}
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& original)
+{
+	if (this != &original)
+		ClapTrap::operator=(original); // appelle l'opé d'affecta° du parent
+
+	std::cout << "ScavTrap " << _name << " copy assignment called" << std::endl;
+	return (*this);
+}
+
+
+void ScavTrap::attack(const std::string& target)
+{
+	if (_hitPoints <= 0 || _energyPoints == 0)
+	{
+		std::cout << "ScavTrap " << _name << " can't attack, no energy or life left!" << std::endl;
+		return ;
+	}
+
+	_energyPoints--;
+
+	std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+}
+
+
+void ScavTrap::guardGate()
+{
+	std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode!" << std::endl; //cf sujet
+}
+
