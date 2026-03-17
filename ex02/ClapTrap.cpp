@@ -17,6 +17,7 @@ ClapTrap::ClapTrap()
 ClapTrap::~ClapTrap(void)
 {
     std::cout << "Default destructor called" << std::endl;
+    // std::cout << "Claptrap " << _name << " default destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap (const std::string&	name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
@@ -28,8 +29,8 @@ ClapTrap::ClapTrap (const	ClapTrap& original)
 //: _name(original._name), _hitPoints(original._hitPoints), _energyPoints(original._energyPoints), _attackDamage(original._attackDamage)
 {
     std::cout << "Copy constructor called" << std::endl;
+    // ou tout initialisé ici 
     *this = original;
-	//ou tout initialisé ici au lieu du this idk
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)
