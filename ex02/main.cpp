@@ -38,6 +38,8 @@ int main()
 	mercedes2 = mercedes;// opé =
 	mercedes2.attack("RedBull");
 
+	std::cout << "\n DESTRUCTION\n" << std::endl;
+
 
 	return 0;
 }

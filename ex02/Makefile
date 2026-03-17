@@ -1,4 +1,4 @@
-NAME = CLAPTRAP
+NAME = FRAGTRAP
 
 CXX = c++
 

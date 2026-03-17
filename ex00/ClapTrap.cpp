@@ -1,22 +1,24 @@
 #include "ClapTrap.hpp"
 
-// ClapTrap::ClapTrap() : _name(""), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+// ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 // {
-//     std::cout << "Default constructor called" << std::endl;
+//     std::cout << "ClapTrap " << _name << " default constructor called" << std::endl;
 // }
 
 ClapTrap::ClapTrap()
 {
-    std::cout << "Default constructor called" << std::endl;
-    _name = "";
+	_name = "Default";
     _hitPoints = 10; // vies de départ du robot
     _energyPoints = 10;
     _attackDamage = 0;
+
+	std::cout << "ClapTrap " << _name << " default constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-    std::cout << "Default destructor called" << std::endl;
+    // std::cout << "Default destructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " default destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap (const std::string&	name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
@@ -24,12 +26,21 @@ ClapTrap::ClapTrap (const std::string&	name) : _name(name), _hitPoints(10), _ene
     std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap (const	ClapTrap& original) 
-//: _name(original._name), _hitPoints(original._hitPoints), _energyPoints(original._energyPoints), _attackDamage(original._attackDamage)
+// ClapTrap::ClapTrap (const	ClapTrap& original) 
+// //: _name(original._name), _hitPoints(original._hitPoints), _energyPoints(original._energyPoints), _attackDamage(original._attackDamage)
+// {
+//     std::cout << "Copy constructor called" << std::endl;
+//     *this = original;
+// 	//ou tout initialisé ici au lieu du this idk
+// }
+
+ClapTrap::ClapTrap(const ClapTrap& original)
+: _name(original._name),
+  _hitPoints(original._hitPoints),
+  _energyPoints(original._energyPoints),
+  _attackDamage(original._attackDamage)
 {
-    std::cout << "Copy constructor called" << std::endl;
-    *this = original;
-	//ou tout initialisé ici au lieu du this idk
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)

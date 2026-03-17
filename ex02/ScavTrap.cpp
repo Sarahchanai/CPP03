@@ -29,10 +29,11 @@ ScavTrap::~ScavTrap()
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& original)
 {
+	std::cout << "ScavTrap " << _name << " copy assignment called" << std::endl;
+	
 	if (this != &original)
 		ClapTrap::operator=(original); // appelle l'opé d'affecta° du parent
 
-	std::cout << "ScavTrap " << _name << " copy assignment called" << std::endl;
 	return (*this);
 }
 
