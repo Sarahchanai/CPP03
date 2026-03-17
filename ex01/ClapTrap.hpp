@@ -38,7 +38,7 @@ class	ClapTrap
 
 
 
-	private :
+	protected : //NB CHANGT !
 
 				std::string	_name; // imposé, cf sujet
 				int	_hitPoints; // imposé, cf sujet
