@@ -22,10 +22,12 @@ ScavTrap::ScavTrap(const ScavTrap& original) : ClapTrap(original)
 	std::cout << "ScavTrap " << _name << " copy constructor called" << std::endl;
 }
 
+
 ScavTrap::~ScavTrap()
 {
 	 std::cout << "ScavTrap " << _name << " destructor called" << std::endl;
 }
+
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& original)
 {
@@ -35,6 +37,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& original)
 	std::cout << "ScavTrap " << _name << " copy assignment called" << std::endl;
 	return (*this);
 }
+
 
 
 void ScavTrap::attack(const std::string& target)
@@ -51,7 +54,8 @@ void ScavTrap::attack(const std::string& target)
 }
 
 
-void ScavTrap::guardGate()
+
+void ScavTrap::guardGate() // cf sujet
 {
 	std::cout << "ScavTrap " << _name << " is now in Gatekeeper mode!" << std::endl; //cf sujet
 }

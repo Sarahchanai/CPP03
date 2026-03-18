@@ -1,29 +1,37 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-int	main()
+
+int main()
 {
-	std::cout << "\n ClapTrap " << std::endl;
+	std::cout << "\n CLAPTRAP CONSTRUCTORS \n" << std::endl;
 	ClapTrap leclerc("Leclerc");
-	leclerc.attack("Verstappen");
-	leclerc.takeDamage(5);
-	leclerc.beRepaired(3);
+	ClapTrap hamilton("Hamilton");
 
-	std::cout << "\n ScavTrap" << std::endl;
-	ScavTrap hamilton("Hamilton"); // ClapTrap construit en 1er, ScavTrap après
-	hamilton.attack("Leclerc"); // mess != de ClapTrap
-	hamilton.takeDamage(20); // hérité de ClapTrap
-	hamilton.beRepaired(10); // hérité de ClapTrap
-	hamilton.guardGate(); //propre à scavtrap
+	std::cout << "\n SCAVTRAP CONSTRUCTORS \n" << std::endl;
+	ScavTrap verstappen("Verstappen"); //1e fils
+	ScavTrap piastri("Piastri");//2eme fils
 
-	std::cout << "\n Copy Constructor" << std::endl;
-	ScavTrap verstappen(hamilton); 
+	std::cout << "\n COPY CONSTRUCTOR\n" << std::endl;
+	ScavTrap clone(verstappen); //2eme fils
 
-	std::cout << "\n Copy Assignment" << std::endl;
-	ScavTrap piastri;
-	piastri = hamilton;
+	std::cout << "\n OPERATEUR D AFFECTATION\n" << std::endl;
+	ScavTrap russel("Russel"); // 3eme fils
+	russel = piastri;
 
-	std::cout << "\n Destruc° " << std::endl;
+	std::cout << "\n TESTS ACTIONS CLAPTRAP\n" << std::endl;
+	leclerc.attack("Hamilton");
+	hamilton.takeDamage(5);
+	hamilton.beRepaired(3);
+
+	std::cout << "\n TESTS ACTIONS SCAVTRAP\n" << std::endl;
+	verstappen.attack("Piastri");
+	piastri.takeDamage(120);      // 0 HP
+	piastri.attack("Verstappen"); // can't attack
+	verstappen.beRepaired(10);
+	verstappen.guardGate();       // specifique ScavTrap
+
+	std::cout << "\n DESTRUCTION\n" << std::endl;
 
 	return 0;
 }
