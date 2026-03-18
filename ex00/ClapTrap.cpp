@@ -1,11 +1,8 @@
 #include "ClapTrap.hpp"
 
-// ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
-// {
-//     std::cout << "ClapTrap " << _name << " default constructor called" << std::endl;
-// }
-
+	
 ClapTrap::ClapTrap()
+// ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
 	_name = "Default";
     _hitPoints = 10; // vies de départ du robot
@@ -15,24 +12,21 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
+
+
 ClapTrap::~ClapTrap(void)
 {
-    // std::cout << "Default destructor called" << std::endl;
 	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
 }
+
+
 
 ClapTrap::ClapTrap (const std::string&	name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
-// ClapTrap::ClapTrap (const	ClapTrap& original) 
-// //: _name(original._name), _hitPoints(original._hitPoints), _energyPoints(original._energyPoints), _attackDamage(original._attackDamage)
-// {
-//     std::cout << "Copy constructor called" << std::endl;
-//     *this = original;
-// 	//ou tout initialisé ici au lieu du this idk
-// }
+
 
 ClapTrap::ClapTrap(const ClapTrap& original)
 : _name(original._name),
@@ -42,6 +36,8 @@ ClapTrap::ClapTrap(const ClapTrap& original)
 {
 	std::cout << "Copy constructor called" << std::endl;
 }
+
+
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 {
@@ -56,6 +52,9 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 	return (*this);
 }
 
+
+
+
 void	ClapTrap::attack(const std::string& target)
 {
 	if (_hitPoints == 0 || _energyPoints == 0)
@@ -66,6 +65,9 @@ void	ClapTrap::attack(const std::string& target)
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl; // cf sujet
 }
+
+
+
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
@@ -81,6 +83,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 	std::cout << "ClapTrap " << _name << " takes " << amount << " points of damage! HP left : " << _hitPoints << std::endl;
 }
+
+
+
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
