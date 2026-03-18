@@ -2,7 +2,7 @@
 #define FRAGTRAP_H
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+// #include "ScavTrap.hpp"
 
 class FragTrap : public ClapTrap
 // FragTrap hérite de ClapTrap exactt comme ScavTrap

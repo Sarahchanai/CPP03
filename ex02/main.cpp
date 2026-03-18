@@ -1,45 +1,46 @@
 #include "FragTrap.hpp"
-
+#include "ScavTrap.hpp"
 
 int main()
 {
-	std::cout << "\n CLAPTRAP (Red Bull ecurie mere) \n" << std::endl;
+	std::cout << "\n CLAPTRAP CONSTRUCTORS \n" << std::endl;
+	ClapTrap leclerc("Leclerc");
+	ClapTrap hamilton("Hamilton");
 
-	ClapTrap redbull("RedBull");
-	redbull.attack("RacingBulls");
-	redbull.takeDamage(5);
-	redbull.beRepaired(3);
+	std::cout << "\n SCAVTRAP CONSTRUCTORS \n" << std::endl;
+	ScavTrap verstappen("Verstappen");
+	ScavTrap piastri("Piastri");
 
+	std::cout << "\n FRAGTRAP CONSTRUCTORS \n" << std::endl;
+	FragTrap norris("Norris");
+	FragTrap alonso("Alonso");
 
-	std::cout << "\n SCAVTRAP (Racing Bulls ecurie fille) \n" << std::endl;
+	std::cout << "\n COPY CONSTRUCTOR\n" << std::endl;
+	FragTrap clone(norris);
 
-	ScavTrap racingbulls("RacingBulls");
-	racingbulls.attack("RedBull"); // attaque (version ScavTrap)
-	racingbulls.takeDamage(20);// hérité
-	racingbulls.beRepaired(10);// hérité
-	racingbulls.guardGate();// propre a elle
+	std::cout << "\n OPERATEUR D AFFECTATION\n" << std::endl;
+	FragTrap sainz("Sainz");
+	sainz = alonso;
 
-	std::cout << "\n FRAGTRAP (Mercedes (ecurie fille aussi mais amelioree))\n" << std::endl;
+	std::cout << "\n TESTS ACTIONS CLAPTRAP\n" << std::endl;
+	leclerc.attack("Hamilton");
+	hamilton.takeDamage(5);
+	hamilton.beRepaired(3);
 
-	FragTrap mercedes("Mercedes");
-	mercedes.attack("RedBull");
-	mercedes.takeDamage(30);
-	mercedes.beRepaired(15);
-	mercedes.highFivesGuys(); // pouvoir spécial
+	std::cout << "\n TESTS ACTIONS SCAVTRAP\n" << std::endl;
+	verstappen.attack("Piastri");
+	piastri.takeDamage(120); // fonct heritee de claptrap pas de redef
+	piastri.attack("Verstappen");
+	verstappen.beRepaired(10); //fonct heritee de claptrap pas de redef
+	verstappen.guardGate();  // specifique ScavTrap
 
-	std::cout << "\n TEST COPIE (Mercedes clone)\n" << std::endl;
-
-	FragTrap mercedes_copy(mercedes); // constructeur de copie
-	mercedes_copy.attack("RacingBulls");
-
-	std::cout << "\n TEST AFFECTATION\n" << std::endl;
-
-	FragTrap mercedes2;
-	mercedes2 = mercedes;// opé =
-	mercedes2.attack("RedBull");
+	std::cout << "\n TESTS ACTIONS FRAGTRAP\n" << std::endl;
+	norris.attack("Verstappen");
+	alonso.takeDamage(150);
+	alonso.attack("Norris");
+	norris.beRepaired(20);
+	norris.highFivesGuys(); // specifique FragTrap
 
 	std::cout << "\n DESTRUCTION\n" << std::endl;
-
-
 	return 0;
 }

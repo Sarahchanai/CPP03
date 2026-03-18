@@ -31,13 +31,13 @@ ClapTrap::ClapTrap(const ClapTrap& original)
   _energyPoints(original._energyPoints),
   _attackDamage(original._attackDamage)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& original)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap copy assignment operator called" << std::endl;
     if (this != &original)
     {
 		this ->_name = original._name;
