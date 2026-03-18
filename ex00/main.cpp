@@ -18,14 +18,15 @@ int main()
 	russel = verstappen;
 
 	std::cout << "\n TESTS ACTIONS\n" << std::endl;
-	verstappen.attack("Piastri");   // "Verstappen attacks Piastri"
+	verstappen.attack("Piastri");
 	piastri.takeDamage(33);
-	piastri.attack("Verstappen");   // piastri à 0 HP → can't attack
+	piastri.attack("Verstappen"); // piastri à 0 HP -> can't attack
 	verstappen.takeDamage(81);
-	verstappen.beRepaired(3);       // verstappen à 0 HP → can't repair
+	verstappen.beRepaired(3); // verstappen à 0 HP => can't repair
 	verstappen.attack("Hamilton");  // can't attack
-	hamilton.attack("Leclerc");     // "Hamilton attacks leclerc" ✓
+	hamilton.attack("Leclerc");//possible
 	leclerc.takeDamage(16);
+	
 
 	std::cout << "\n DESTRUCTION\n" << std::endl;
 
