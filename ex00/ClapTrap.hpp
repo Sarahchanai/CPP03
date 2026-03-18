@@ -13,7 +13,7 @@ class	ClapTrap
 	public :
 
 				ClapTrap(); // constructeur par défaut
-				~ClapTrap(); // destru par déf
+				~ClapTrap(); // UNIQUE destructeur  (par défault)
 
 				ClapTrap(const std::string&	name); // Constructeur -> imposé, cf sujet
 

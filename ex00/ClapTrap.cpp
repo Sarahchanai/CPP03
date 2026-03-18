@@ -12,13 +12,13 @@ ClapTrap::ClapTrap()
     _energyPoints = 10;
     _attackDamage = 0;
 
-	std::cout << "ClapTrap " << _name << " default constructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
     // std::cout << "Default destructor called" << std::endl;
-	std::cout << "ClapTrap " << _name << " default destructor called" << std::endl;
+	std::cout << "ClapTrap " << _name << " destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap (const std::string&	name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
